@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/" style="font-family: palatino,serif"><strong>Phishing Detection</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        {% if request.user.is_authenticated %}
+            <li class="nav-item ">
+            <a class="nav-link" href="http://localhost:8000/" style="font-family: palatino,serif;"><strong>Home</strong></a>
+            </li>
+
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}" style="font-family: palatino,serif;"><strong>About</strong></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'dashboard' %}" style="font-family: palatino,serif;"><strong>Dashboard</strong></a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}" style="font-family: palatino,serif;"><strong>Profile</strong></a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8000/phishingDetection/check_website/" style="font-family: palatino,serif;"><strong>Phishing</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}" style="font-family: palatino,serif;"><strong>Contact</strong></a>
+                        </li>
+                            <form method="post" action="{% url 'logout' %}" class="form-inline my-2 my-lg-0">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-outline-success my-2 my-sm-0" style="font-family: palatino,serif;"><strong>Logout</strong></button>
+                            </form>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}" style="font-family: palatino,serif;">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}" style="font-family: palatino,serif;">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}" style="font-family: palatino,serif;">Register</a>
+                    </li>
+        {% endif %}
+       
+    </div>
+  </nav>

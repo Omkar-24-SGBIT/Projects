@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block style %}
+<style>
+    /* Add your CSS styles here */
+    .about {
+        margin: 20px auto;
+        padding: 20px;
+        /* border: 1px solid #ccc; */
+        border-radius: 5px;
+        max-width: 1400px;
+        
+    }
+
+    .about h1 {
+        text-align: center;
+        color:#FFCC00;
+    }
+
+    .about p {
+        /* font-weight: bold; */
+        color: white;
+    }
+
+    .about-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .about-img img {
+        max-width: 200px;
+        border-radius: 5px;
+        margin-right: 20px;
+    }
+
+    .about-text {
+        flex: 1;
+    }
+
+    .btn {
+        margin-left: 23%;
+        border-radius: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block index %}
+{% endblock %}
+
+{% block content %}
+<section class="about" style="font-family: palatino,serif">
+    <h1><strong>ABOUT</strong></h1>
+    <p>
+       
+A phishing website detection system is a sophisticated technology designed to identify and prevent fraudulent websites that aim to protect users from phishing attacks and steal sensitive information. These systems utilize advanced algorithms and machine learning techniques to analyze website characteristics, detect suspicious patterns, and distinguish legitimate websites from phishing scams. By examining factors such as website content, domain registration details, and user behavior, these systems can accurately identify malicious websites attempting to mimic legitimate organizations or institutions. Once detected, the system can identify the phishing websites and alert users to the potential threats, thereby protecting them from falling victim to identity theft, financial fraud, or other cyberattacks. Phishing website detection systems play a crucial role in safeguarding online users, businesses, and organizations from the growing threat of phishing attacks, ensuring a safer and more secure browsing experience for all. 
+    </p>
+    <hr>
+    <img src="https://cdn.dribbble.com/users/1952691/screenshots/11527466/media/9b7cd53cafd5a6f9d48da5cc9ad02454.jpg?resize=1000x750&vertical=center" alt="" width="350px" height="250px" style="margin-left: 35%;border-radius: 16px;">
+</section>
+
+<button class="btn"style="font-family: palatino,serif">www.PhishingDetection.com</button>
+<button class="btn"style="font-family: palatino,serif">PhishingDetection@gmail.com</button>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

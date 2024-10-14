@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}User Profile{% endblock %}
+
+{% block style %}
+<style>
+    
+</style>
+{% endblock %}
+
+{% block index %}
+{% endblock %}
+{% block content %}
+    <div class="container mt-5">
+        <h2 style="text-align: center; font-weight: bolder;font-family: palatino,serif;color: #FFCC00; ">PROFILE</h2>
+        
+
+        <div class="container mt-2">
+            <h1 style="font-family: palatino,serif;color: #FFCC00;">Edit Profile</h1>
+            
+            <form method="post" action="{% url 'edit_profile' %}" style="padding-left: 2%;padding-right: 2%;width: 100%;overflow: hidden;">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="id_username" style="font-family: palatino,serif;">Username:</label>
+                    <input type="text" name="username" value="{{ user.username }}" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_first_name" style="font-family: palatino,serif;">First Name:</label>
+                    <input type="text" name="first_name" value="{{ user.first_name }}" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_last_name" style="font-family: palatino,serif;">Last Name:</label>
+                    <input type="text" name="last_name" value="{{ user.last_name }}" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_email" style="font-family: palatino,serif;">Email:</label>
+                    <input type="email" name="email" value="{{ user.email }}" class="form-control">
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="font-family: palatino,serif;">Save Changes</button>
+                <a href="{% url 'profile' %}" class="btn btn-secondary" style="font-family: palatino,serif;">Cancel</a>
+            </form>
+            
+            
+        </div>
+        <p style="font-family: palatino,serif;">You can change your password <a href="{% url 'password_change' %}" style="color: rgb(69, 3, 73);font-size: 3vh;font-weight: bold;font-family: palatino,serif;">Here</a> </p>
+        
+        <hr>
+
+        <div class="container mt-3">
+            <h2 style="font-family: palatino,serif;color: #FFCC00;">Delete Account</h2>
+            
+            <p style="font-family: palatino,serif;">Are you sure you want to delete your account? This action cannot be undone.</p>
+            
+            <form method="post" action="{% url 'delete_account' %}">
+                {% csrf_token %}
+                
+                <button type="submit" class="btn btn-danger" style="font-family: palatino,serif;">Delete</button>
+                <a href="{% url 'profile' %}" class="btn btn-secondary" style="font-family: palatino,serif;">Cancel</a>
+            </form>
+            
+            
+        </div>
+
+    </div>
+{% endblock %}
