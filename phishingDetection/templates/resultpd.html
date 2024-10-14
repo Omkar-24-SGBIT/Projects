@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block index %}
+{% endblock %}
+
+{% block content %}
+    <div style="text-align: center;">
+        <h1>URL Result</h1>
+        <p>The URL is: {{ result }}</p>
+        <a href="{% url 'check_url' %}"><b><u>Check Another URL</u></b></a>
+    </div>
+{% endblock %}
+
+
+{% block footer %}
+{% endblock %}

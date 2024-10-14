@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{% endblock %}
+
+{% block style %}
+    <style>
+        body {
+            font-family: palatino,serif;
+            /* background-color: #f4f4f4; */
+            background:rgb(118, 12, 193);
+        }
+        h1 {
+            text-align: center;
+        }
+        .result {
+            max-width: 930px;
+            margin: auto;
+            background-color: #FAE7A5;
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .status-legitimate {
+            color: green;
+        }
+        .status-phishing {
+            color:red;
+            
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+{% endblock %}
+
+{% block index %}
+{% endblock %}
+
+{% block content %}
+    <h1 style="font-family: palatino,serif;color:#FFCC00 ;"><b>Check Result<b></h1>
+    <div class="result">
+        <p class="message {% if is_legitimate %}status-legitimate{% else %}status-phishing{% endif %}">
+            {{ message }}
+        </p>
+        <p>
+            <a href="http://localhost:8000/phishingDetection/check_website/" style="font-family: palatino,serif;">Check Another Website</a>
+        </p>
+        <!-- <h2>Accuracy</h2> -->
+        <!-- <p>Legitimate Score : Website is {{ rn }}% Safe to use</p> -->
+
+    </div><br>
+    <div style="display: flex; justify-content: center;">
+        <div style="margin-right: 20px;">
+            <img src="{% static 'graph/classifier_metrics.png' %}" alt="Classifier Accuracy Plot" style="border-radius: 85px;height: 350px;">
+        </div>
+        <div>
+            <img src="{% static 'graph/legitimate.png' %}" alt="Legitimate Plot"style="border-radius: 85px;height: 350px;>
+        </div>
+    </div>
+    
+    {% endblock %}
+
+
+    {% block footer %}
+    {% endblock %}

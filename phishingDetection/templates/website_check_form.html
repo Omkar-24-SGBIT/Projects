@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{% endblock %}
+
+{% block style %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* background-color: #f4f4f4; */
+            background:rgb(118, 12, 193);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+
+        }
+        label {
+            font-weight: bold;
+        
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            
+            /* background-color:#f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer; */
+            color: #494949 !important;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: #ffffff;
+            padding: 20px;
+            border: 4px solid #494949 !important;
+            display: inline-block;
+            transition: all 0.4s ease 0s;
+            
+           
+        }
+        button:hover {
+            /* background-color:#f44336 ; */
+            color: #ffffff !important;
+            background: #f6b93b;
+            border-color: #f6b93b !important;
+            transition: all 0.4s ease 0s;
+
+        }
+    </style>
+{% endblock %}
+
+{% block index %}
+{% endblock %}
+
+{% block content %}
+    <h1 style="font-size: 120px; font-family: palatino,serif;color:lightgrey;     text-shadow: 2px 2px red;"><b>Check Your Website's here</b></h1>
+    <!-- <h5 style="margin-left: 20%;margin-right: 20%;" style="font-family: palatino,serif;"> <br>SSL certificate missing or expired, low-quality design, and potential phishing indicators detected on the website. Exercise caution before interacting. This application captures the main points about SSL certificate issues, low-quality design/content, and the potential presence of phishing indicators. Adjust the wording as needed based on the specific checks performed and their outcomes.</h5> -->
+    <br><form method="post" style="max-width: 800px;margin: auto;background-color: #fff;padding: 20px;border-radius: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        {% csrf_token %} <br>
+        <label for="url" style="font-family: palatino,serif;">Enter Website URL:</label><br>
+        <input type="text" id="url" name="url" required><br><br>
+        <button type="submit" style="font-family: palatino,serif;margin-left: 45%;padding: 1%;">Check</button>
+    </form>
+    {% endblock %}
+
+
+    {% block footer %}
+    {% endblock %}
