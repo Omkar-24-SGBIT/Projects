@@ -8,10 +8,14 @@ Real-Time Detection: Provides fast and reliable phishing classification with hig
 Scalable and Extensible: Built with flexibility to integrate additional features and models as needed.
 
 # Tech Stack
-Programming Language: Python ,
-Frameworks: Django (API Development) ,
-Machine Learning Libraries: scikit-learn, Pandas, NumPy ,
-Frontend: HTML, CSS, JavaScript ,
+Programming Language: Python
+
+Frameworks: Django (API Development)
+
+Machine Learning Libraries: scikit-learn, Pandas, NumPy
+
+Frontend: HTML, CSS, JavaScript
+
 Database: SQLite/MySQL.
 
 # System Workflow
@@ -23,5 +27,7 @@ Classification : Trained models classify URLs as legitimate or phishing based on
 
 # Project Objectives
 Enhance cybersecurity by mitigating phishing threats effectively.
+
 Provide a scalable, open-source solution for real-world applications.
+
 Leverage machine learning to adapt to evolving phishing techniques.
